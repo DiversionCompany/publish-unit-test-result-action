@@ -525,6 +525,7 @@ if __name__ == "__main__":
     log_level = get_var('LOG_LEVEL', options) or 'INFO'
     set_log_level(logger, log_level, gha)
     set_log_level(publish.logger, log_level, gha)
+    set_log_level(logging.getLogger('github.Requester'), log_level, gha)
     if log_level == 'DEBUG':
         gha.echo(True)
 
